@@ -20,7 +20,7 @@ export const searchCurrent = search => (dispatch, getState, { fetch }) => {
   });
 };
 
-export const resetRearchCurrent = () => (dispatch, getState, { fetch }) => {
+export const resetSearchCurrent = () => (dispatch, getState, { fetch }) => {
   dispatch({ type: SEARCH_RESET });
 };
 

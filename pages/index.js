@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { SearchInput, MultiResult } from 'Components'
 import { slug } from 'Utils'
-import { resetRearchCurrent } from 'Actions'
+import { resetSearchCurrent } from 'Actions'
 
 import styles from 'Styles/Home.module.scss'
 
@@ -16,7 +16,7 @@ export default function Home(props) {
   const { ssrData } = props;
 
   useEffect(() => {
-    dispatch(resetRearchCurrent());
+    dispatch(resetSearchCurrent());
   }, [])
 
   return (
