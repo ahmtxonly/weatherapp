@@ -1,0 +1,240 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 5rem;
+  position: relative;
+
+  .title {
+    color: #2C74F4;
+  }
+
+  p {
+    text-transform: capitalize;
+  }
+
+  .backHome {
+    background-color: #000;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 99;
+
+    img {
+      width: 70%;
+      height: 100%;
+    }
+  }
+
+  .searchSide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .form {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 400px;
+
+      .search_input {
+        height: 50px;
+        // background-color: #f1f6ff;
+        border: 1px solid #ddd;
+        width: 100%;
+        border-radius: 5px;
+        padding-left: 15px;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      button {
+        position: absolute;
+        border: none;
+        background: none;
+        width: 50px;
+        height: 50px;
+        right: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 50%;
+          height: 50%;
+        }
+      }
+
+    }
+  }
+
+  .currentResult {
+
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .statusIcon {
+      border-right: 1px solid #ddd;
+      width: 100px;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .detailSide {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      flex: 1;
+
+      .cityAndStatus {
+        span {
+          color: #f60;
+          font-weight: bold;
+          margin-right: 5px;
+        }
+      }
+
+      .weatherStatus {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
+
+    .instantResult {
+      border-left: 1px solid #ddd;
+      height: 100px;
+      min-width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+
+      .mainTemp {
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .dailyStatus {
+        font-size: 13px;
+      }
+    }
+
+  }
+
+}
+
+.five_daily_result {
+
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  margin-top: 20px;
+
+  .daily_result {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+
+    &:first-child {
+      border-color: #f60;
+    }
+
+    .five_daily_title {
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+      display: block;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hours {
+      display: flex;
+      flex-wrap: wrap;
+
+
+      .multiple_result {
+        background-color: #fff;
+        border: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex: 1;
+        font-size: 13px;
+        padding-bottom: 10px;
+        transition: 300ms all;
+        position: relative;
+
+        &.multiple_result_home {
+          cursor: pointer;
+
+          .multiple_result_home_title {
+            padding-top: 10px;
+            font-weight: 600;
+          }
+        }
+
+        &:hover {
+          background-color: #ddd;
+
+          .tooltip {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        &:not(:last-child) {
+          border-right: 1px solid #ddd;
+
+        }
+
+        .temp {
+          font-weight: bold;
+          font-size: 20px;
+          margin-top: 5px;
+        }
+
+        .tooltip {
+          position: absolute;
+          background-color: #ddd;
+          width: 100%;
+          text-align: center;
+          padding: 10px;
+          bottom: 100%;
+          border-radius: 5px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+          opacity: 0;
+          visibility: hidden;
+          transition: 300ms all;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
