@@ -71,7 +71,7 @@ export default function Home(props) {
 
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.apiUrl}/group?id=323786,745042,311044,323776,2950159&appid=${process.env.apiKey}&units=metric`)
+  const res = await fetch(`${process.env.apiUrl}/group?id=${process.env.currentCitys}&appid=${process.env.apiKey}&units=metric`)
   const resData = await res.json()
   return { props: { ssrData: resData } }
 }
